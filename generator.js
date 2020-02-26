@@ -1,5 +1,7 @@
 $(document).ready( function()  {
     var paper = Raphael("canvas", $('#canvas').width(), $(window).height() * 0.95)
+    let canvasWidth;
+    let canvasHeight;
 
     openTab();
 
@@ -34,8 +36,8 @@ $(document).ready( function()  {
         closeTab();
         
 
-        let canvasWidth = sequenceObject.horizontal_space * sequenceObject.objects.length;
-        let canvasHeight = sequenceObject.messages.length * 40 + 200;
+        canvasWidth = sequenceObject.horizontal_space * sequenceObject.objects.length;
+        canvasHeight = sequenceObject.messages.length * 40 + 200;
         
         paper.setSize(canvasWidth, canvasHeight);
         paper.clear();
@@ -103,14 +105,42 @@ $(document).ready( function()  {
     });
 
     $("#downloadButton").click(() => {
-        var hiddenElement = document.createElement('a');
-        var svg = paper.toSVG();
+        let hiddenElement = document.createElement('a');
+        let svg = paper.toSVG();
 
+        
+        let canvasElement = document.createElement('canvas');
+        canvasElement.width = canvasWidth;
+        canvasElement.height = canvasHeight;
+        let canvasContext = canvasElement.getContext("2d");
 
-        hiddenElement.href = 'data:attachment/text,' + encodeURIComponent(svg);
-        hiddenElement.target = '_blank';
-        hiddenElement.download = 'diagram.svg';
-        hiddenElement.click();
+        // Para cargar el canvas con el SVG gnerado, primero se dbe crear un
+        // Image
+        let DOMURL = window.URL || window.webkitURL || window;
+        let imageAux = new Image();
+        let svgBlob = new Blob([svg], {type: 'image/svg+xml'});
+        let url = DOMURL.createObjectURL(svgBlob);
+
+        imageAux.onload = function() {
+            // Se dibuja el Image creado en el canvas
+            canvasContext.drawImage(imageAux, 0, 0);
+
+            // Se le pone un fondo blanco (atrás de lo que se acaba de dibujar)
+            canvasContext.globalCompositeOperation = 'destination-over'
+            canvasContext.fillStyle = "#ffffff";
+            canvasContext.fillRect(0, 0, canvasElement.width, canvasElement.height);
+
+            // Se libera la URL creada para el objecto con el SVG
+            DOMURL.revokeObjectURL(url);
+
+            // Convertir de SVG a PNG usando canvas de HTML
+            hiddenElement.href = canvasElement.toDataURL("image/png;base64");;
+            hiddenElement.target = '_blank';
+            hiddenElement.download = 'diagram.png';
+            hiddenElement.click();
+         };
+         imageAux.src = url;   
+        
     })
 
 
