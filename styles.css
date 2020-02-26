@@ -13,6 +13,7 @@
     padding: 30px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    border: solid 1px
 }
 
 #sliderTab {
@@ -24,7 +25,10 @@
     top:70px;
     content: url("edit.png");
     padding: 8px;
-    border-radius: 20px
+    border-radius: 20px;
+    border-top: solid 1px;
+    border-right: solid 1px;
+    border-bottom: solid 1px
 }
 
 #sliderBackground {
