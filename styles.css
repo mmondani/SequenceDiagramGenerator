@@ -1,0 +1,36 @@
+#slider {
+    margin-top: 30px;
+    z-index:10;
+    position: fixed;
+}
+
+#sliderFormContainer {
+    margin-left:-860px;
+}
+
+#sliderForm {
+    background-color: #BBD8B3; 
+    padding: 30px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#sliderTab {
+    background-color: #BBD8B3;
+    height: 60px;
+    width: 60px;
+    position:fixed;
+    margin-left: 0px;
+    top:70px;
+    content: url("edit.png");
+    padding: 8px;
+    border-radius: 20px
+}
+
+#sliderBackground {
+    background-color: #ffffff;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 9;
+}
