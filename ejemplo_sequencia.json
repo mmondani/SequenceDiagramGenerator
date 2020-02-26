@@ -1,0 +1,80 @@
+{
+	"horizontal_space": 200,
+
+	"title": "Probador MX51/2 W",
+
+	"objects": [
+		{
+			"id": 1,
+			"name": "Operador",
+			"human": true
+		},
+		{
+			"id": 2,
+			"name": "TLCD",
+			"human": false
+		},
+		{
+			"id": 3,
+			"name": "Probador",
+			"human": false
+		},
+		{
+			"id": 4,
+			"name": "Placa MX51/2 W",
+			"human": false
+		},
+		{
+			"id": 5,
+			"name": "Receptor RF",
+			"human": false
+		}
+	],
+
+	"messages": [
+		{"origin": 1, "destination": 2, "type": "message", "text": "Presiona START"},
+		{"origin": 2, "destination": 3, "type": "message", "text": "TECLA_TLCD_PAN"},
+		{"origin": 3, "destination": 4, "type": "message", "text": "power3V()"},
+		{"origin": 4, "destination": 3, "type": "message", "text": "pulso buzz 8ms"},
+		{"origin": 3, "destination": 3, "type": "message", "text": "buzzer = salida"},
+		{"origin": 3, "destination": 4, "type": "message", "text": "buzzer = 1"},
+		{"origin": 3, "destination": 3, "type": "message", "text": "buzzer = entrada"},
+		{"origin": 3, "destination": 4, "type": "message", "text": "todas las signal = 0"},
+		{"origin": 4, "destination": 3, "type": "reply", "text": "pulso buzz 8ms"},
+		{"origin": 3, "destination": 4, "type": "message", "text": "TP10 = 1"},
+		{"origin": 4, "destination": 3, "type": "reply", "text": "pulso buzz 8ms"},
+		{"origin": 3, "destination": 4, "type": "message", "text": "TP7 = 1"},
+		{"origin": 4, "destination": 3, "type": "reply", "text": "pulso buzz 8ms"},
+		{"origin": 3, "destination": 4, "type": "message", "text": "TP12 = 1"},
+		{"origin": 4, "destination": 3, "type": "reply", "text": "pulso buzz 8ms"},
+		{"origin": 3, "destination": 4, "type": "message", "text": "TP11 = 1"},
+		{"origin": 4, "destination": 3, "type": "reply", "text": "pulso buzz 8ms"},
+		{"origin": 4, "destination": 4, "type": "message", "text": "bate bien?"},
+		{"origin": 4, "destination": 3, "type": "reply", "text": "pulso buzz 8ms"},
+		{"origin": 1, "destination": 4, "type": "message", "text": "zona 7/ pulsos 1"},
+		{"origin": 4, "destination": 3, "type": "reply", "text": "pulso buzz 8ms"},
+		{"origin": 1, "destination": 4, "type": "message", "text": "zona 7/ pulsos 5"},
+		{"origin": 4, "destination": 3, "type": "reply", "text": "pulso buzz 8ms"},
+		{"origin": 1, "destination": 4, "type": "message", "text": "zona 7/ pulsos 3"},
+		{"origin": 4, "destination": 3, "type": "reply", "text": "pulso buzz 8ms"},
+		{"origin": 1, "destination": 4, "type": "message", "text": "zona 3/ pulsos 3"},
+		{"origin": 4, "destination": 3, "type": "reply", "text": "pulso buzz 8ms"},
+		{"origin": 1, "destination": 4, "type": "message", "text": "zona 1/ pulsos 3"},
+		{"origin": 4, "destination": 3, "type": "reply", "text": "pulso buzz 8ms"},
+		{"origin": 1, "destination": 4, "type": "message", "text": "zona 8/ pulsos 3"},
+		{"origin": 4, "destination": 3, "type": "reply", "text": "pulso buzz 8ms"},
+		{"origin": 1, "destination": 4, "type": "message", "text": "zona 1/ pulsos 3"},
+		{"origin": 4, "destination": 3, "type": "reply", "text": "pulso buzz 8ms"},
+		{"origin": 4, "destination": 4, "type": "message", "text": "graba código RF"},
+		{"origin": 4, "destination": 3, "type": "message", "text": "pulso buzz 8ms"},
+		{"origin": 4, "destination": 4, "type": "message", "text": "sleep"},
+		{"origin": 3, "destination": 3, "type": "message", "text": "medir consumo"},
+		{"origin": 4, "destination": 3, "type": "message", "text": "pulso buzz 8ms"},
+		{"origin": 4, "destination": 1, "type": "message", "text": "buzz grave"},
+		{"origin": 1, "destination": 4, "type": "message", "text": "apretar tamnper"},
+		{"origin": 3, "destination": 3, "type": "message", "text": "TP buzzer = 1?"},
+		{"origin": 3, "destination": 3, "type": "message", "text": "TP buzzer = 0?"},
+		{"origin": 4, "destination": 5, "type": "message", "text": "transmite 201"},
+		{"origin": 5, "destination": 3, "type": "message", "text": "salida receptor RF = 0"}
+	]
+}
