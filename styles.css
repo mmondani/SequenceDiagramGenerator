@@ -9,14 +9,14 @@
 }
 
 #sliderForm {
-    background-color: #BBD8B3; 
+    background-color: #ADCAD6; 
     padding: 30px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 
 #sliderTab {
-    background-color: #BBD8B3;
+    background-color: #ADCAD6;
     height: 60px;
     width: 60px;
     position:fixed;
