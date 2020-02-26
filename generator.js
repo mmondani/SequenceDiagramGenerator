@@ -135,13 +135,13 @@ $(document).ready( function()  {
     function closeTab () {
         $('#sliderFormContainer').animate({
             'margin-left':`-${$('#sliderFormContainer').width()}px`
-        }, 400);
+        }, 1000, "easeOutBounce");
 
         $('#sliderTab').animate({
             'margin-left': `0px`,
             'border-top-left-radius': '20px',
             'border-bottom-left-radius': '20px'
-        },400);
+        }, 1000, "easeOutBounce");
 
         $('#sliderBackground').animate({
             'opacity': 0
